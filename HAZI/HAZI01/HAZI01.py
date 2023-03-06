@@ -1,6 +1,6 @@
-def subset(input_list, start_index, end_index):
+def subset(input_list, start, end):
     output_list = []
-    for i in range(start_index, end_index):
+    for i in range(start, end):
         output_list.append(input_list[i])
 
     return output_list
