@@ -17,12 +17,13 @@ import numpy as np
 
 def column_swap(a : np.array) -> np.array:
 
-    a[:, [0, 1]] = a[:,[1 ,0]]
+    a[:, [0, 1]] = a[:,[1, 0]]
     return a
 
 
-#a = np.array([[1,2,3],[4,5,6],[7,8,9]])
+#a = np.array([[1,3],[0,4]])
 #print(column_swap(a))
+
 
 # %%
 # Készíts egy olyan függvényt ami összehasonlít két array-t és adjon vissza egy array-ben, hogy hol egyenlőek 
@@ -229,7 +230,7 @@ def get_act_date() -> np.datetime64:
 # time stemp mikortól
 
 def sec_from_1970() -> int:
-    d0 = np.datetime64('1970')
+    d0 = np.datetime64('1970-01-01T00:02:00')
     d1 = np.datetime64('now')
     return int((d1 - d0) / np.timedelta64(1, "s"))
 
