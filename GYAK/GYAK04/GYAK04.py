@@ -32,7 +32,7 @@ def dict_to_dataframe(test_dict) -> pd.DataFrame:
 df = dict_to_dataframe(stats)
 #print(df)
 
-
+#%%
 '''
 Készíts egy függvényt ami a bemeneti DataFrame-ből vissza adja csak azt az oszlopot amelynek a neve a bemeneti string-el megegyező.
 
@@ -92,7 +92,7 @@ def population_density(test_df) -> pd.DataFrame:
 
 #print(population_density(df))
 
-
+#%%
 '''
 Készíts egy függvényt, ami a bemeneti Dataframe adatai alapján elkészít egy olyan oszlopdiagramot (bar plot),
 ami vizualizálja az országok népességét.
@@ -110,16 +110,18 @@ függvény neve: plot_population
 
 def plot_population(test_df) -> plt.Figure:
     new_df = test_df.copy()
+    fig = plt.figure()
     plt.plot(new_df['country'], new_df['population'])
     plt.xlabel('Country')
     plt.ylabel('Population (millions)')
     plt.title('Population of Countries')
-    plt.show()
+    #plt.show()
+    return fig
 
 
-#plot_population(df)
+plot_population(df)
 
-
+#%%
 '''
 Készíts egy függvényt, ami a bemeneti Dataframe adatai alapján elkészít egy olyan kördiagramot,
 ami vizualizálja az országok területét. Minden körcikknek legyen egy címe, ami az ország neve.
@@ -136,12 +138,15 @@ függvény neve: plot_area
 def plot_area(test_df) -> plt.Figure:
     new_df  = test_df.copy()
 
+    fig = plt.figure()
     plt.pie(new_df['area'], labels=new_df['country'], autopct='%1.1f%%')
     plt.title('Area of Countries')
     plt.axis('equal')
-    plt.show()
+    return fig
 
 
-#plot_area(df)
+plot_area(df)
 
 
+
+# %%
