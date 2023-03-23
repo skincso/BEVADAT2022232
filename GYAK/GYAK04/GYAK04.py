@@ -70,7 +70,7 @@ def get_top_two(test_df) -> pd.DataFrame:
 
 #print(get_top_two(df))
 
-
+#%%
 '''
 Készíts egy függvényt ami a bemeneti DataFrame-ből kiszámolja az országok népsűrűségét és eltárolja az eredményt egy új oszlopba 
 ('density').
@@ -85,12 +85,12 @@ függvény neve: population_density
 
 def population_density(test_df) -> pd.DataFrame:
     new_df = test_df.copy()
-    density = np.round(new_df['population'] / new_df['area'], 2)
+    density = new_df['population'] / new_df['area']
     new_df['density'] = density
     return new_df
 
 
-#print(population_density(df))
+print(population_density(df))
 
 #%%
 '''
@@ -111,7 +111,7 @@ függvény neve: plot_population
 def plot_population(test_df) -> plt.Figure:
     new_df = test_df.copy()
     fig = plt.figure()
-    plt.plot(new_df['country'], new_df['population'])
+    plt.bar(new_df['country'], new_df['population'])
     plt.xlabel('Country')
     plt.ylabel('Population (millions)')
     plt.title('Population of Countries')
@@ -139,7 +139,7 @@ def plot_area(test_df) -> plt.Figure:
     new_df  = test_df.copy()
 
     fig = plt.figure()
-    plt.pie(new_df['area'], labels=new_df['country'], autopct='%1.1f%%')
+    plt.pie(new_df['area'], labels=new_df['country'])
     plt.title('Area of Countries')
     plt.axis('equal')
     return fig
