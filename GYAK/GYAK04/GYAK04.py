@@ -90,7 +90,7 @@ def population_density(test_df) -> pd.DataFrame:
     return new_df
 
 
-print(population_density(df))
+#print(population_density(df))
 
 #%%
 '''
@@ -119,7 +119,7 @@ def plot_population(test_df) -> plt.Figure:
     return fig
 
 
-plot_population(df)
+#plot_population(df)
 
 #%%
 '''
@@ -145,7 +145,7 @@ def plot_area(test_df) -> plt.Figure:
     return fig
 
 
-plot_area(df)
+#plot_area(df)
 
 
 
