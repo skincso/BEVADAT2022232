@@ -14,9 +14,6 @@ class LinearRegression:
         self.m = 0
         self.c = 0
 
-        #L = 0.0001  # The learning Rate
-        #epochs = 1000  # The number of iterations to perform gradient descent
-
         n = float(len(X)) # Number of elements in X
 
         # Performing Gradient Descent 
@@ -34,20 +31,19 @@ class LinearRegression:
             if i % 100 == 0:
                 print(np.mean(y - y_pred))
 
-        #plt.plot(losses)
-
         # Run the model on the test set
         pred = []
         for x in X:
             y_pred = self.m*x + self.c
             pred.append(y_pred)
-        print(pred)
-        print(y)
+
+        return y_pred
 
 
-    def predict(self, X, y):
+    def predict(self, X):
         y_pred = self.m*X + self.c
+        return y_pred
 
-        plt.scatter(X, y)
-        plt.plot([min(X), max(X)], [min(y_pred), max(y_pred)], color='red') # predicted
-        plt.show()
+        #plt.scatter(X, y)
+        #plt.plot([min(X), max(X)], [min(y_pred), max(y_pred)], color='red') # predicted
+        #plt.show()
