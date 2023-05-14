@@ -85,7 +85,7 @@ függvény neve: model_fit
 
 def model_fit(model, epochs, train_images, train_labels) -> tf.keras.Sequential:
     fitted = model.fit(train_images, train_labels, epochs=epochs)
-    return fitted
+    return model
 
 
 #fitted_model = model_fit(compiled_model, 15, train_images, train_labels)
